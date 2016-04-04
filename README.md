@@ -2,7 +2,7 @@
 
 MDS<i>Writer</i> is a software for manually creating multi-document summarization corpora and a platform for developing complex annotation tasks spanning multiple steps. 
 
-_(Christian M. Meyer, Darina Benikova, Margot Mieskes, Iryna Gurevych)_
+_(Christian M. Meyer, Darina Benikova, Margot Mieskes, Iryna Gurevych - publication planned)_
 
 <!--
 Please use the following citation:
@@ -52,10 +52,10 @@ For license information, see LICENSE.txt and NOTICE.txt files.
 
 * Install Java, Maven, Tomcat, and MySQL.
 * Download the source code from GitHub.
-* Import the empty schema from doc/mdswriter_schema.sql to your database.
-* Update src/main/webapp/META-INF/context.xml with your database settings.
-* Update src/main/webapp/js/st.js: Set the SERVER_URL variable to the URL the software will be depolyed to.
+* Import the empty schema from `doc/mdswriter_schema.sql` to your database.
+* Update `src/main/webapp/META-INF/context.xml` with your database settings.
+* Update `src/main/webapp/js/st.js`: Set the SERVER_URL variable to the URL the software will be depolyed to.
 * Build the software using `mvn package`
-* Deploy the war file  from target/ to your application server.
+* Deploy the war file from `target/` to your application server.
 * Open http://localhost:8080/mdswriter (or accordingly) and try to log in using admin1:admin2.
 * Test if everything works and then import your own data into the schema.
