@@ -34,9 +34,9 @@ For license information, see LICENSE.txt and NOTICE.txt files.
 
 ## Documentation and Tutorial
 
-* **Video tutorial** explaining our initial setup: http://www.youtube.com/
-* **Screenshots** of the proposed seven steps for multi-document summarization: `doc/screenshot_*`
-* Corresponding **annotation guidelines**: `doc/annotation_guidelines.pdf`
+* **Video tutorial** explaining our initial setup: https://www.youtube.com/channel/UC1-qTfTCnVBZklJwCj2kGDQ
+* **Screenshots** of the proposed seven steps for multi-document summarization: `doc/screenshots.pdf`
+* Corresponding **annotation guidelines**: `doc/annotation_guidelines_en.pdf`
 * Installation guide: _see below_
 
 
