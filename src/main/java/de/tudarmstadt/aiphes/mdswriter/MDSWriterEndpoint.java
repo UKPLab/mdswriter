@@ -642,6 +642,7 @@ public class MDSWriterEndpoint {
 					Nugget nugget = item.getNugget();
 					sendResponse(new Message("6NGT" + nugget.getId()
 						+ "\t" + nugget.getTextRevised()
+						+ "\t" + nugget.getText()
 						+ "\t" + nugget.getContext()
 						+ "\t" + nugget.getDocument().getTitle(), session));
 				}
