@@ -27,6 +27,10 @@ Please use the following citation:
 
 Contact person: **Christian M. Meyer**, http://www.ukp.tu-darmstadt.de/people/meyer
 
+http://www.ukp.tu-darmstadt.de/
+
+http://www.tu-darmstadt.de/
+
 Don't hesitate to send us an e-mail or report an issue, if something is broken (and it shouldn't be) or if you have further questions.
 
 For license information, see LICENSE.txt and NOTICE.txt files.
