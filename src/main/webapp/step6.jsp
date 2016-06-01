@@ -74,15 +74,15 @@
 				var divContext = document.createElement('div');
 				divContext.className = 'context';
 				divContext.style.display = 'none';
-				var textParts = nugget[1].split('…');
+				var textParts = nugget[2].split('…');
 				var j = 0;
 				var context = '';
-				for (var i = 0; i < nugget[2].length; i++)
-					if (nugget[2][i] == '…')
+				for (var i = 0; i < nugget[3].length; i++)
+					if (nugget[3][i] == '…')
 						context += '<em>' + textParts[j++] + '</em>';
 					else
-						context += nugget[2][i];
-				context = '<div class="source"><fmt:message key="document.from" /> <em>' + nugget[3] + '</em>:</div>' + context;
+						context += nugget[3][i];
+				context = '<div class="source"><fmt:message key="document.from" /> <em>' + nugget[4] + '</em>:</div>' + context;
 				divContext.innerHTML = context;
 				li.appendChild(divContext);
 				nuggetList.appendChild(li);
