@@ -2,25 +2,21 @@
 
 MDS<i>Writer</i> is a software for manually creating multi-document summarization corpora and a platform for developing complex annotation tasks spanning multiple steps. 
 
-_(Christian M. Meyer, Darina Benikova, Margot Mieskes, Iryna Gurevych - publication planned)_
-
-<!--
 Please use the following citation:
 
 ```
-@InProceedings{smith:20xx:CONFERENCE_TITLE,
-  author    = {Smith, John},
-  title     = {My Paper Title},
-  booktitle = {Proceedings of the 20XX Conference on XXXX},
-  month     = {Month Name},
-  year      = {20xx},
-  address   = {Gotham City, USA},
-  publisher = {Association for XXX},
-  pages     = {XXXX--XXXX},
+@InProceedings{Meyer:2016:ACLdemo,
+  author    = {Meyer, Christian M. and Benikova, Darina and Mieskes, Margot and Gurevych, Iryna},
+  title     = {MDSWriter: Annotation tool for creating high-quality multi-document summarization corpora},
+  booktitle = {Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (ACL): System Demonstrations},
+  month     = {August},
+  year      = {2016},
+  address   = {Berlin, Germany},
+  publisher = {Association for Computational Linguistics},
+  pages     = {(to appear)},
   url       = {http://xxxx.xxx}
 }
 ```
--->
 
 > **Abstract:** In this paper, we present MDS<i>Writer</i>, a novel open-source annotation tool for creating multi-document summarization corpora. A major innovation of our tool is that we divide the complex summarization task into multiple steps which enables us to efficiently guide the annotators and to record all their intermediate results and user–system interaction data. This allows evaluating the individual components of a complex summarization system and learning from the human composition process. MDS<i>Writer</i> is highly flexible and can be adapted to multiple other tasks.
 
@@ -59,3 +55,11 @@ For license information, see LICENSE.txt and NOTICE.txt files.
 * Deploy the war file from `target/` to your application server.
 * Open http://localhost:8080/mdswriter (or accordingly) and try to log in using admin1:admin2.
 * Test if everything works and then import your own data into the schema.
+
+
+## Extensibility
+
+Adapting MDS<i>Writer</i> to a new task works best if you first follow the installation guide and get the basic system to work. For developing your application, it is best to use a J2EE-ready IDE, such as Eclipse or IntelliJ. Then work in your application's needs:
+* Define the annotation steps you want to provide. For each step, add a corresponding JSP file with the user interface to the `webapp` folder. You can of course reuse the existing user interfaces which might save you quite some development time. All JSP files refer to the common `_header`, `_title`, and `_footer` templates to ensure a similar appearance and menu. For the corresponding guidelines, you may want to add a help file to the `webapp/help` folder. If you care about internationalization, put all your strings into the property files at `resources/i18n/`.
+* The core link between user interface (JSP) and server is our WebSocket communication protocol. The Java class `de.tudarmstadt.aiphes.mdswriter.Message` contains an overview of all predefined messages. Change the messages according to your needs and implement or reuse the corresponding business logic in `de.tudarmstadt.aiphes.mdswriter.MDSWriterEndpoint` and its child and helper classes. Most likely, you will require authentication and storing user-system interaction data which MDS<i>Writer</i> provides you without further adaptation. In case of a cross-document annotation task, you can also reuse the classes in the `de.tudarmstadt.aiphes.mdswriter.doc` package.
+* If necessary, make sure that you also update the database schema for your particular task.
