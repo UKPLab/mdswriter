@@ -13,8 +13,8 @@ Please use the following citation:
   year      = {2016},
   address   = {Berlin, Germany},
   publisher = {Association for Computational Linguistics},
-  pages     = {(to appear)},
-  url       = {http://xxxx.xxx}
+  pages     = {97--102},
+  url       = {http://www.aclweb.org/anthology/P/P16/P16-4017.pdf}
 }
 ```
 
@@ -22,10 +22,6 @@ Please use the following citation:
 
 
 Contact person: **Christian M. Meyer**, http://www.ukp.tu-darmstadt.de/people/meyer
-
-http://www.ukp.tu-darmstadt.de/
-
-http://www.tu-darmstadt.de/
 
 Don't hesitate to send us an e-mail or report an issue, if something is broken (and it shouldn't be) or if you have further questions.
 
@@ -63,7 +59,7 @@ For license information, see LICENSE.txt and NOTICE.txt files.
 
 ## Extensibility
 
-Adapting MDS<i>Writer</i> to a new task works best if you first follow the installation guide and get the basic system to work. For developing your application, it is best to use a J2EE-ready IDE, such as Eclipse or IntelliJ. Then work in your application's needs:
-* Define the annotation steps you want to provide. For each step, add a corresponding JSP file with the user interface to the `webapp` folder. You can of course reuse the existing user interfaces which might save you quite some development time. All JSP files refer to the common `_header`, `_title`, and `_footer` templates to ensure a similar appearance and menu. For the corresponding guidelines, you may want to add a help file to the `webapp/help` folder. If you care about internationalization, put all your strings into the property files at `resources/i18n/`.
-* The core link between user interface (JSP) and server is our WebSocket communication protocol. The Java class `de.tudarmstadt.aiphes.mdswriter.Message` contains an overview of all predefined messages. Change the messages according to your needs and implement or reuse the corresponding business logic in `de.tudarmstadt.aiphes.mdswriter.MDSWriterEndpoint` and its child and helper classes. Most likely, you will require authentication and storing user-system interaction data which MDS<i>Writer</i> provides you without further adaptation. In case of a cross-document annotation task, you can also reuse the classes in the `de.tudarmstadt.aiphes.mdswriter.doc` package.
+Adapting MDS<i>Writer</i> to a new task works best if you first follow the installation guide and get the basic system to work. For developing your application, we recommend using a J2EE-ready IDE, such as Eclipse or IntelliJ. The following steps are necessary to make MDS<i>Writer</i> do what your application needs:
+* Define the annotation steps you want to provide. For each step, add a corresponding JSP file with the user interface to the `webapp` folder. You can of course reuse the existing user interfaces which should save you quite some development time. All JSP files refer to the common `_header`, `_title`, and `_footer` templates to ensure a similar appearance and menu. For the corresponding guidelines, you may want to add a help file to the `webapp/help` folder. If you care about internationalization, put all your strings into the property files at `resources/i18n/` - currently we have English and German.
+* The core link between user interface (JSP) and MDS<i>Writer</i> server is our WebSocket communication protocol. The Java class `de.tudarmstadt.aiphes.mdswriter.Message` contains an overview of all predefined messages. Change the messages according to your needs and implement or reuse the corresponding business logic in `de.tudarmstadt.aiphes.mdswriter.MDSWriterEndpoint` and its child and helper classes. Most likely, you will require authentication and storing user-system interaction data which MDS<i>Writer</i> provides you without further adaptation. In case of a cross-document annotation task, you can also reuse the classes in the `de.tudarmstadt.aiphes.mdswriter.doc` package.
 * If necessary, make sure that you also update the database schema for your particular task.
